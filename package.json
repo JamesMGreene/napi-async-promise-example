@@ -1,0 +1,46 @@
+{
+  "name": "napi-async-promise-example",
+  "version": "0.1.0",
+  "description": "Node v8.x N-API asynchronous Promise example addon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesMGreene/napi-async-promise-example.git"
+  },
+  "keywords": [
+    "napi",
+    "n-api",
+    "native",
+    "addon",
+    "asynchronous",
+    "async",
+    "promise",
+    "deferred",
+    "future"
+  ],
+  "author": {
+    "name": "James M. Greene",
+    "email": "james.m.greene@gmail.com",
+    "url": "http://jamesmgreene.github.io/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesMGreene/napi-async-promise-example/issues"
+  },
+  "homepage": "https://github.com/JamesMGreene/napi-async-promise-example#readme",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "scripts": {
+    "test": "node-gyp configure build && mocha"
+  },
+  "dependencies": {
+    "bindings": "^1.3.0",
+    "node-addon-api": "rolftimmermans/node-addon-api#promise"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^4.0.1"
+  }
+}
