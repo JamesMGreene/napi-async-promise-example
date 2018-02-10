@@ -1,6 +1,6 @@
 {
   "name": "napi-async-promise-example",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Node v8.x N-API asynchronous Promise example addon",
   "repository": {
     "type": "git",
