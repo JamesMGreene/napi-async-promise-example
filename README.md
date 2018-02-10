@@ -3,12 +3,7 @@
 Node v8.x N-API asynchronous `Promise` example addon
 
 
-## Warning
-
-This example addon is dependent on the currently unmerged C++ `Napi::Promise` implementation for the `node-addon-api` module: https://github.com/nodejs/node-addon-api/pull/137
-
-
-### Implementation Note
+## Implementation Note
 
 **IMPORTANT!**
 

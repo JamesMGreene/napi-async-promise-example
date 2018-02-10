@@ -17,15 +17,15 @@ Napi::Promise SumAsyncPromise(const Napi::CallbackInfo& info) {
   // `AsyncWorker` (or a similar concept) in order to ensure this
   // `Promise` is fulfilled asynchronously.
   //
-  auto resolver = Napi::Promise::Resolver::New(env);
+  auto deferred = Napi::Promise::Deferred::New(env);
 
   if (info.Length() != 2) {
-    resolver.Reject(
+    deferred.Reject(
       Napi::TypeError::New(env, "Invalid argument count").Value()
     );
   }
   else if (!info[0].IsNumber() || !info[1].IsNumber()) {
-    resolver.Reject(
+    deferred.Reject(
       Napi::TypeError::New(env, "Invalid argument types").Value()
     );
   }
@@ -34,10 +34,10 @@ Napi::Promise SumAsyncPromise(const Napi::CallbackInfo& info) {
     double arg1 = info[1].As<Napi::Number>().DoubleValue();
     Napi::Number num = Napi::Number::New(env, arg0 + arg1);
 
-    resolver.Resolve(num);
+    deferred.Resolve(num);
   }
 
-  return resolver.Promise();
+  return deferred.Promise();
 }
 
 
